@@ -152,3 +152,67 @@ git pull exp01 master --allow-unrelated-histories
 
 ```
 
+# 四、IDEA集成Git和GitHub
+
+## 1、IDEA集成Git
+
+1、配置忽略文件git.ignore
+
+2、IDEA初始化本地库：VCS->Import into Version Control->Creat Git Repository（变红）
+
+3、添加修改到暂存区：右键->Git->add（变绿）
+
+4、提交本地库：右键->Git->Commit File（变黑）
+
+5、切换版本：右下角Version Control->log->右键->Checkout Revesion '版本号'
+
+6、创建分支：右键->Git->Repository->branches
+
+或者点击右下角master（也可切换分支）
+
+7、合并分支：切换到master分支->点击fix分支->Merge into Current
+
+IDEA解决代码冲突：手动合并，点击弹出的冲突页面的Merge
+
+## 2、IDEA集成GitHub
+
+1、下载GitHub，添加账号
+
+建议使用token登录
+
+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（90天2023/7/1失效）
+
+2、创建远程库GitHub
+
+VCS->Import into Version Control->Share Project on GitHub（会自动创建远程库）
+
+3、push到远程库GitHub
+
+右键->Git->Repository->Push
+
+或者VSC->Git->Push
+
+4、自定义远程链接
+
+5、pull拉取远程库
+
+右键->Git->Repository->Pull
+
+6、克隆
+
+IDEA初始化界面->Get from Version Control->填入URL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
