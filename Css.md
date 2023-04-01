@@ -157,6 +157,7 @@ IE盒模型和W3C标准盒模型的区别：
 （9）伪类选择器（a:hover,li:nth-child）
 （10）伪元素选择器（::before、::after）
 （11）通配符选择器（*）
+标签选择器>id选择器>类选择器>后代选择器>子选择器>伪类选择器
 ```
 
 #### 3.::before 和:after 中双冒号和单冒号有什么区别？解释一下这 2 个伪元素的作用。
@@ -214,8 +215,7 @@ fore来在一个元素前增加一些文本，并为这些文本添加样式。�
 当元素的一个继承属性没有指定值时，则取父元素的同属性的计算值。只有文档根元素取该属性的概述中给定的初始值（这里的意思应
 该是在该属性本身的定义中的默认值）。
 
-当元素的一个非继承属性（在Mozilla code里有时称之为reset property）没有指定值时，则取属性的初始值initial v
-alue（该值在该属性的概述里被指定）。
+当元素的一个非继承属性（在Mozilla code里有时称之为reset property）没有指定值时，则取属性的初始值initial value（该值在该属性的概述里被指定）。
 
 有继承性的属性：
 
@@ -595,8 +595,7 @@ absolute定位的元素，是相对于它的第一个position值不为static的�
 ```
 Flex是FlexibleBox的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。
 
-任何一个容器都可以指定为Flex布局。行内元素也可以使用Flex布局。注意，设为Flex布局以后，子元素的float、cl
-ear和vertical-align属性将失效。
+任何一个容器都可以指定为Flex布局。行内元素也可以使用Flex布局。注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
 
 采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为Flex
 元素（flex item），简称"元素"。
@@ -659,9 +658,7 @@ flex布局是CSS3新增的一种布局方式，我们可以通过将一个元素
 
 ```css
   采用的是相邻边框连接处的均分原理。
-  将元素的宽高设为0，只设置
-  border，把任意三条边隐藏掉（颜色设为
-  transparent），剩下的就是一个三角形。
+  将元素的宽高设为0，只设置border，把任意三条边隐藏掉（颜色设为transparent），剩下的就是一个三角形。
   #demo {
   width: 0;
   height: 0;
@@ -1316,7 +1313,7 @@ initial是初始值的意思，也就是该元素除了unicode-bidi和direction�
 
 inherit是继承的意思，也就是该元素除了unicode-bidi和direction以外的CSS属性都继承父元素的属性值。
 
-unset是取消设置的意思，也就是当前元素浏览器或用户设置的CSS忽略，然后如果是具有继承特性的CSS，如color，则
+unset是取消设置的意思，也就是当前元素浏览器或用户设置的CSS忽略，然后如果是具有继承特性的CSS，如color，则h
 使用继承值；如果是没有继承特性的CSS属性，如background-color，则使用初始值。
 
 ```
