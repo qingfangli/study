@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 500px;
+            height: 400px;
+            
+            margin: 0 auto;
+        }
+        .tab{
+            width: 500px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: greenyellow;
+            /* border: 1px solid; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        li{
+            display: inline;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+        .content{
+            width: 500px;
+            height: 350px;
+            background-color: aquamarine;
+            /* border: 1px solid; */
+        }
+        .item{
+            display: none;
+        }
+        .active{
+            color: red;
+        }
+        .active2{
+            display: block;
+        }
+
+
+
+        .one{
+            width: 480px;
+            height: 250px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20px;
+        }
+        table{
+            width: 480px;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th,td{
+            border: 1px solid;
+            margin: 0;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="tab">
+            <ul>
+                <li ><a class="active" href="javascript:;">全选文本框案例</a></li>
+                <li><a href="javascript:;">222222</a></li>
+                <li><a href="javascript:;">333333</a></li>
+            </ul>
+        </div>
+        <div class="content"> 
+            <div class="item active2">
+                <div class="one">
+                    <span>全选文本框案例</span>
+                    <table>
+                        <tr>
+                            <th class="allClick">
+                                <input type="checkbox" id="checkAll"><span class="all">全选</span>
+                            </th>
+                            <th>商品</th>
+                            <th>商家</th>
+                            <th>价格</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" class="ck">
+                            </td>
+                            <td>小米手机</td>
+                            <td>小米</td>
+                            <td>￥3999</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" class="ck">
+                            </td>
+                            <td>华为手机</td>
+                            <td>华为</td>
+                            <td>￥4999</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="check" class="ck">
+                            </td>
+                            <td>vivo手机</td>
+                            <td>vivo</td>
+                            <td>￥2999</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="item">
+                <div>第二个</div>
+            </div>
+            <div class="item">
+                <div>第三个</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // tab
+        const as = document.querySelectorAll('.tab a')
+        // console.log(as);
+        for (let i =0;i<as.length;i++){
+            as[i].addEventListener('mouseenter',function(){
+                // console.log('鼠标经过');
+                // 添加高亮样式
+                document.querySelector('.tab .active').classList.remove('active')
+                this.classList.add('active')
+
+                // 对应内容
+                document.querySelector('.content .active2').classList.remove('active2')
+                document.querySelector(`.content .item:nth-child(${i + 1})`).classList.add('active2')
+                
+            })
+        }
+
+        // 全选文本框案例
+        const checkAll = document.querySelector('#checkAll')
+        const cks = document.querySelectorAll('.ck')
+        // 点击全选
+        checkAll.addEventListener('click',function(){
+            // console.log(this.checked);
+            // 遍历所有小复选框,小复选框的checked与全选框一致
+            for(let i = 0;i<cks.length;i++){
+                cks[i].checked = checkAll.checked
+            }
+        })
+        // 小复选框控制大复选框
+        for (let i = 0;i < cks.length;i++){
+            cks[i].addEventListener('click',function(){
+                // 选中的小复选框的个数
+                // console.log(document.querySelectorAll('.ck:checked').length);
+                checkAll.checked = document.querySelectorAll('.ck:checked').length === cks.length
+            })
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <script>
+        function getRandomColor1(f){
+            let a = 0
+            let b = 0
+            let c = 0
+            if(f){
+                a = Math.floor(Math.random() * 256)
+                b = Math.floor(Math.random() * 256)
+                c = Math.floor(Math.random() * 256)
+            }
+            else{
+
+            }
+            // console.log(`rgb(${a},${b},${c})`)
+            return `rgb(${a},${b},${c})`
+        };
+
+        function getRandomColor2(r){
+            let arr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+            let cc = ''
+            if(r){
+                for (let i = 0;i < 6;i++){
+                    let aa = parseInt(Math.floor(Math.random() * arr.length))
+                    let bb = arr[aa]
+                    // console.log(a)
+                    cc = cc + bb
+                }
+            }
+            else{
+                let aa = 0
+                let bb = 0
+            }
+            // console.log(`#${cc}`)
+            return `#${cc}`
+            
+        }
+
+        var r = prompt('请输入一个数：')
+        // document.write(`<div style="background-color:${getRandomColor1(r)}"></div>
+        //     <div style="background-color:${getRandomColor2(r)}">
+        //     `)
+
+        const div = document.querySelectorAll('div')
+        div[0].style.backgroundColor = getRandomColor1(r)
+        div[1].style.backgroundColor = getRandomColor2(r)
+    </script>
+</body>
+</html>

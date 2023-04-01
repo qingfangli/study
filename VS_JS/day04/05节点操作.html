@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 元素节点、属性节点、文本节点、其他
+        dom树里的每一个内容都称为节点
+    -->
+    <div class="dad">
+        <div class="baby">x</div>
+    </div>
+    <script>
+        // 父节点parentNode
+        const baby = document.querySelector('.baby')
+        console.log(baby);
+        console.log(baby.parentNode);
+
+        // 子节点childNodes，获得所有子节点，包括文本节点（空格、换行）、注释节点等
+        // children属性（常用），获得所有元素节点，返回一个伪数组
+
+        // 兄弟关系查找：下一个兄弟节点：nextElementSibling属性，上一个兄弟节点：previousElementSibling属性
+
+        // 增加节点，先创建（createElement）再添加
+        const div = document.createElement('div')
+        div.innerHTML = '我是添加的div'
+        // document.body.appendChild(div)
+        baby.appendChild(div)  // appendChild插入到这个父元素的后面
+
+        const span = document.createElement('span')
+        span.innerHTML = '我是添加的span'
+        const dad = document.querySelector('.dad')
+        dad.insertBefore(span,baby)  //insertBefore插入到某个子元素的前面（要插入的元素，在哪个元素前面）
+
+        // 克隆节点 先克隆cloneNode(true)，再追加
+        const div2 = baby.cloneNode(true)  //加true克隆标签里的内容
+        dad.appendChild(div2)
+
+        // 删除节点:父元素.removeChild(要删除的节点)
+        dad.removeChild(span)
+
+        // M端事件：移动端事件，touchstart,tiuchmove,touchend
+
+    </script>
+</body>
+</html>

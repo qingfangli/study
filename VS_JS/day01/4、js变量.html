@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <script>
+
+    // // 变量由字母、数字、下划线、$组成，数字不能开头,严格区分大小写
+    // // 变量声明
+    // let age
+    // // 变量赋值
+    // age = 18
+    // age = age + 1
+    // // alert(age)
+    // let name = prompt('请输入名字：')
+    // document.write(name)
+
+    // // var age = 11  旧版本中使用var（var可以先使用再声明；可以重复声明；没有块级作用域等）
+    // // alert(age)
+
+    var fn = function(x){
+        // let x = prompt('请输入x')
+        let xx = 0
+        for(let i = String(x).length - 1;i >= 0;i--){
+            xx += String(x)[i]
+        }
+        if(xx == x){
+            return true
+        }else {
+            return false
+        }
+    }
+    console.log(fn(-121))
+
+    </script>
+
+</body>
+</html>

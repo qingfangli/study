@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 局部作用域、全局作用域、块作用域（{}中）
+    var不会产生块作用域
+
+
+    js环境中分配内存的生命周期：内存分配、内存使用、内存回收
+    js垃圾回收机制：
+    全局变量一般不会回收（关闭页面回收），一般情况下局部变量的值，不用了会被自动回收掉
+    算法：引用计数法、标记清除法（从根部扫描，能找到就不清除，找不到就清除）
+
+    内存泄漏：程序分配中的内存由于某种原因程序未释放或无法释放叫做内存泄漏
+
+    闭包：一个函数对周围状态的引用捆绑在一起，内层函数中访问到其他外层函数的作用域（外部函数也使用内部函数的变量）
+    闭包 = 内层函数 + 外层函数的变量
+    -->
+    <script>
+        // 闭包，外部函数fun也使用内部函数i的变量
+        // function outer(){
+        //     let i = 1
+        //     function fn(){
+        //         console.log(i);
+        //     }
+        //     return fn
+        // }
+        // const fun = outer()
+        // fun()
+
+        // 闭包可能会引起内存泄漏
+        function fn(){
+            let c = 1
+            function fun(){
+                c++
+                console.log(`函数被调用了${c}次`);
+            }
+            return fun
+        }
+        const re = fn()  //re = f fun()
+        re()  //函数被调用了2次
+        re()  //函数被调用了3次
+
+        // 变量提升(var)
+        // 1、把所有var声明的变量提升到 当前作用域的最前面
+        // 2、只提升声明，不提升赋值
+        console.log(num + '件');  //undefined件
+        var num
+
+        // 函数提升
+        // 1、会把所有函数声明提升到当前作用域的最前面
+        // 2、只提升函数声明，不提升函数调用
+        func()
+        function func(){
+            console.log('函数提升');
+        }
+        
+    </script>
+
+</body>
+</html>

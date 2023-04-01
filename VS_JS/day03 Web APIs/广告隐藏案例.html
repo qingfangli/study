@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 200px;
+            background-color: aqua;
+            border: 1px;
+            margin: 0 auto;
+            
+        }
+        .close{
+            width: 20px;
+            height: 20px;
+            margin-top: 10px;
+            margin-left: 270px;
+            background-image: url('./icon/叉.png');
+            background-size: cover;
+            position: absolute;
+            cursor: pointer;
+        }
+        .con{
+            width: 300px;
+            font-size: 30px;
+            position: absolute;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="con">广告</div>
+      <div class="close"></div>  
+    </div>
+
+    <script>
+        const btn = document.querySelector('.close')
+        const box = document.querySelector('.box')
+        btn.addEventListener('click',function(){
+            box.style.display = 'none'
+        })
+    </script>
+    
+</body>
+</html>

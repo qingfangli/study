@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        数据存储在浏览器中
+        设置、读取方便、页面刷新也不会丢失数据
+        sessionStorage和localStorage
+     -->
+     <script>
+        // 本地存储只能存储字符串数据类型
+        localStorage.setItem('age',18)
+
+        // 存储复杂数据类型:需要将复杂数据类转换成JSON字符串，存储到本地
+        const obj = {
+            uname:'hh',
+            age :18
+        }
+        localStorage.setItem('obj',JSON.stringify(obj))  //字符串->JSON  
+        console.log(localStorage.getItem('obj'));
+        console.log(JSON.parse(localStorage.getItem('obj')));  //JSON->字符串
+     </script>
+</body>
+</html>

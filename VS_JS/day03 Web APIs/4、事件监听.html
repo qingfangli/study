@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        DOM L1
+        事件源.on事件 = function(){}
+        DOM L2
+        元素对象.addEventListener('事件类型',要执行的函数)
+
+        区别：on方法会被覆盖，addEventListener方式可以绑定多次，拥有事件更多特性，推荐使用
+
+        事件类型：
+        鼠标事件：click鼠标点击，mouseenter鼠标经过，mouseleave鼠标离开
+        焦点事件：focus获取焦点,blur失去焦点
+        键盘事件：keydown键盘按下触发，keyup键盘抬起触发
+        文本事件：input用户输入事件
+
+
+        事件对象：
+        绑定函数的第一个参数function(e)
+        e的属性：key,type
+     -->
+     <button>按钮</button>
+     <input type="text">
+     <textarea></textarea>
+     <script>
+        const btn = document.querySelector('button')
+        btn.addEventListener('click',function(e){
+            alert('点击事件')
+            console.log(e)
+        })
+
+        const inp = document.querySelector('input')
+        inp.addEventListener('input',function(){
+            console.log(inp.value)
+            // console.log(inp);
+        })
+
+        // str.trim()去除字符串左右的空格
+
+     </script>
+</body>
+</html>

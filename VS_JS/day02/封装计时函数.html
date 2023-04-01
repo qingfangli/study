@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 输入秒，输出时分秒 */
+        function getTime(s){
+            let h = parseInt(s / 3600)
+            let m = parseInt((s - h * 3600) / 60)
+            let ss = s - h * 3600 - m * 60
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            ss = ss < 10 ? '0' + ss : ss
+            document.write(`${h}小时${m}分钟${ss}秒`) 
+        }
+        let s = +prompt("请输入秒：")
+        getTime(s)
+    </script>
+    
+</body>
+</html>

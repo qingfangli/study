@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 30px;
+            border: 1px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        function getMyDate(){
+            // 一、实例化
+            // 1、得到当前时间
+            const date = new Date()
+            console.log(date);
+            // 2、得到指定时间
+            const date1 = new Date('2023-3-5 16:40:00')
+            console.log(date1);
+
+            // 二、日期对象的方法
+            console.log(date.getMonth() + 1); // 得到月要加1，getMonth()取值0-11
+            console.log(date.getDay()); //得到星期几，取值0-6
+
+            year = date.getFullYear()
+            month = date.getMonth() + 1
+            datee = date.getDate()
+            hour = date.getHours()
+            min = date.getMinutes()
+            second = date.getSeconds()
+
+            if(month < 10) month = '0' + month
+            if(datee < 10) datee = '0' + datee
+            if(hour < 10) hour = '0' + hour
+            if(min < 10) min = '0' + min
+            // if(second < 10) second = '0' + second 
+            second = second > 10 ? second : '0' + second
+
+            // document.write(year + '-' + month + '-' + datee + ' ' + hour + ':' + min + ':' + second)
+            return year + '-' + month + '-' + datee + ' ' + hour + ':' + min + ':' + second
+        }
+        
+        const div = document.querySelector('div')
+        div.innerHTML = getMyDate()
+        // div.innerHTML = date.toLocalString()
+        // 定时器
+        setInterval(function(){
+            // div.innerHTML = getMyDate()
+        },1000)
+
+        // 三、时间戳：指1970年01月01日00时00分00秒至现在的毫秒数，是一种特殊的计量时间的方法‘
+        // 将来的时间戳 - 现在的时间戳 = 剩余时间毫秒数
+        // 1、getTime() 可以返回指定时间的时间戳
+        const date = new Date()
+        console.log(date.getTime());
+        // 2、+new Date() 可以返回指定时间的时间戳
+        console.log(+new Date());
+        console.log(+new Date('2023-3-6 11:19:00'));
+        // 3、Date.now() 只能得到当前的时间戳
+        console.log(Date.now());
+
+        // 倒计时效果：将来的时间戳 - 现在的时间戳，然后转换成时分秒
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 节流throttle：单位时间内，频繁触发事件，只执行一次
+        const div = document.querySelector('div')
+        let i = 1
+        function mouseMove(){
+            div.innerHTML = i++
+        }
+        // 1、使用Lodash库
+        // 语法：_.throttle(fun,时间)
+
+        // 2、手写throttle函数
+        function throttle(fn,t){
+            let timer = null
+            return function(){
+                if(!timer){
+                    timer = setTimeout(function(){
+                        fn()
+                        // 清空定时器
+                        timer = null
+                    },t)
+                }
+            }
+        }
+        div.addEventListener('mousemove',throttle(mouseMove,1000))
+    </script>
+</body>
+</html>

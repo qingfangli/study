@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <!-- dom:操作网页内容 -->
+    <!-- 1、获取dom元素
+        （1）
+        document.querySelector('css选择器')返回匹配的第一个元素，一个HTMLElement对象，如果没有，返回null
+        document.querySelectorAll('css选择器')获取全部，返回数组（伪数组）
+        （2）(了解)
+        document.getElementById('nav')获取一个元素
+        document.getElementByTagName('div')  获取所以div，返回伪数组
+        document.getElementByClassName('w')  获取所以类名为w，返回伪数组
+
+        2、操作元素内容
+        （1）对象.innerText 属性
+        显示纯文本，不解析标签
+        （2）对象.innerHTML 属性
+        可以解析标签
+
+        3、操作元素属性
+        （1）常用属性：src,title,herf;对象.属性 = 值
+        （2）样式属性：
+            1）对象.style.样式 = '值' 别忘了加单，样式的多个单词采用小驼峰命名法，如backgroundColor
+            body标签不需要获取，直接document.body.style.backgroundImage = '值'
+
+            2）如果有多个样式要修改，可以通过类名修改，新值换旧值
+            对象.className = '类名'，如div.className = 'nav box'
+
+            3）H5新增：
+            对象.classList.add('类名')  追加类
+            对象.classList.remove('类名') 删除类
+            对象.classList.toggle('类名')  切换类，有就删掉，没有就加上
+
+        4、获取表单的值
+            表单.value
+            表单.type = 'text'/'passward'
+            disabled/checked/selected = true/false
+            自定义属性：data-自定义属性，如data-id='1'
+    -->
+    <!-- <div class="box1">1</div>
+    <div class="box2">2</div>
+    <p id="nav">导航栏</p>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul> -->
+
+    <div data-id="1"></div>
+    <div data-id="2"></div>
+
+    <script>
+        // const d = document.querySelector('div')  //第一个div
+        // const b = document.querySelector('.box1')  //第一个div
+        // const n = document.querySelector('#nav')
+        // const li = document.querySelector('ul li:first-child')
+        // // 获取单个可以直接修改样式
+        // nav.style.color = 'red'
+        // // 获取多个不可以直接修改样式
+        // const l = document.querySelectorAll('ul li')
+        // console.log(d)
+        // console.log(b)
+        // console.log(n)
+        // console.log(li)
+        // console.log(l)
+
+
+        // console.log(n.innerText);
+        // console.log(n.innerHTML);
+        // n.innerText = '<strong>innerHTML</strong>'
+        // n.innerHTML = '<strong>innerHTML</strong>'
+
+        // console.log(n.innerText);
+        // console.log(n.innerHTML);
+
+        const one = document.querySelector('div')
+        console.log(one.dataset.id);  //dataset获取所以的自定义属性
+
+
+        
+        
+    </script>
+</body>
+</html>

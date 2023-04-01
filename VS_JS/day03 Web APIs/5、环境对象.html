@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+
+    <!-- 
+        环境对象：函数内部特殊的变量this，代表当前函数所运行时所处的环境
+        
+        回调函数：如果将函数A作为参数传给函数B时，我们称函数A为回调函数
+     -->
+    <script>
+        // 每个函数都有this函数对象，普通函数里this都指向window
+        // 谁调用这个函数，this就指向谁
+    function fn1(){
+        console.log(this)
+    }   
+    // fu1()
+    window.fu1()
+
+    const btn = document.querySelector('button')
+    btn.addEventListener('click',function(){
+        // btn.style.color = 'red'
+        this.style.color = 'red'
+    })
+    </script>
+    
+</body>
+</html>

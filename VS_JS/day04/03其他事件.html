@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        // 1、页面加载事件load：等待页面所有资源加载完毕，就回去执行回调函数
+        // window.addEventListener('load',function(){
+        //     const btn = document.querySelector('button')
+        //     btn.addEventListener('click',function(){
+        //         alert('hhhha')
+        //     })
+        // })
+
+        // 2、页面加载事件DOMContentLoaded:给document添加，无需等待样式表、图像等完全加载
+        document.addEventListener('DOMContentLoaded',function(){
+            const btn = document.querySelector('button')
+            btn.addEventListener('click',function(){
+                alert('hhhha')
+            })
+        })
+    </script> -->
+
+    <style>
+        body{
+            height: 2000px;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            overflow: scroll;
+            border: 1px solid;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button>按钮</button>
+    <div>
+        rrrrrrrrrrrrrrrrrrr
+        ttttttttttttttttttt
+        rrrrrrrrrrrrrrrrrrr
+        ttttttttttttttttttt
+        rrrrrrrrrrrrrrrrrrr
+        ttttttttttttttttttt
+        rrrrrrrrrrrrrrrrrrr
+        ttttttttttttttttttt
+        rrrrrrrrrrrrrrrrrrr
+        ttttttttttttttttttt
+        rrrrrrrrrrrrrrrrrrr
+        ttttttttttttttttttt
+        rrrrrrrrrrrrrrrrrrr
+        ttttttttttttttttttt     
+        
+    </div>
+    <script>
+        // 3、页面滚动事件scroll，给window或document添加
+        // window.addEventListener('scroll',function(){
+        // //     // 执行操作
+        // scrollTop可读可写
+        // // console.log(document.documentElement.scrollTop);
+        // const n = document.documentElement.scrollTop
+        // if (n >= 100){
+        //     div.style.display = 'block'
+        // }
+        // else{
+        //     div.style.display = 'none'
+        // }
+        // })
+
+        // 4、页面尺寸事件resize
+        window.addEventListener('resize',function(){
+            console.log(1);
+        })
+
+        const div = document.querySelector('div')
+        // 获取div的宽度，不包含边框的宽度
+        // console.log(div.clientWidth);
+        div.addEventListener('scroll',function(){
+            // scrollTop被卷去的头部
+            console.log(div.scrollTop)  
+        })
+
+        // offsetWidth、offsesetHeight获取元素宽高：内容+padding+border
+        // offsetTop、offsetLaft得到的位置以带有定位的父级为准，如果都没有则以文档左上角为准
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 30px;
+            border: 1px solid blue;
+            border-right: 0px;
+            border-top: 0px;
+        }
+        .data{
+            width: 30px;
+            background-color: aquamarine;
+            margin-left: 30px;
+            float: left;
+        }
+        span{
+            font-size: 6px;
+            display: inline-block;
+        }
+        h5{
+            /* display: inline; */
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let arr = []
+        for(let i = 1;i<=4;i++){
+            let data = +prompt(`请输入第${i}次数据：`)
+            arr.push(data)
+        }
+        document.write(`<div class="box">`)
+        for(let i = 0;i<4;i++){
+            let m = 200 - Number(arr[i])
+            document.write(`
+                <div class="data" style = "height:${arr[i]}px;margin-top:${m}px">
+                    <h5>${arr[i]}</h5>
+                    <span style="margin-top:${arr[i]-17}px">第${i+1}季度</span>
+                </div>
+            `)
+        }
+        
+        document.write(`</div>`)
+    </script>
+
+</body>
+</html>
