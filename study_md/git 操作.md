@@ -178,6 +178,8 @@ IDEA解决代码冲突：手动合并，点击弹出的冲突页面的Merge
 
 1、下载GitHub，添加账号
 
+File->setting->GitHub->+
+
 建议使用token登录
 
 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（90天2023/7/1失效）
