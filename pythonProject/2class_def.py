@@ -4,7 +4,7 @@ class Person:
     def eat(self,food):  # 第一个参数接收一个实例
         print("吃",self,food)
 
-    # 装饰器的作业：在保证原本函数不改变的前提下，直接给这个函数增加一些功能
+    # 装饰器的作用：在保证原本函数不改变的前提下，直接给这个函数增加一些功能
     @classmethod  # 装饰器
     def leiff(cls):  # 第一个参数接收一个类
         print("这是一个类方法",cls)
